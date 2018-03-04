@@ -26,3 +26,9 @@
 .game-wrapper .info-wrapper .alert {
   display: none;
 }
+.game-wrapper .info-wrapper .card {
+  margin-top: 40px;
+}
+.game-wrapper .info-wrapper .card .form-check-input {
+  margin-left: -0.25rem;
+}

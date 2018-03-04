@@ -8,7 +8,8 @@ Available at https://ashil88.github.io/color-match/
 - Bootstrap
 
 ## Instructions
-
+- The starting colour is 'lime' (Player A)
+- By default, the last cell selected can be chosen again by the next player. To disable this, tick the box within 'Settings'.
 
 ## Additional info
 - open 'index.html' in Firefox or Chrome

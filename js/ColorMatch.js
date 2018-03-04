@@ -8,13 +8,20 @@ class ColorMatchManager {
         this.cellCountLime = gameWrapper.find('#lime');
         this.cellCountOrange = gameWrapper.find('#orange');
         this.currentColor = 'lime';
+        this.disableLastCell = false;
         this.gridWrapper = gameWrapper.find('.grid-wrapper');
         this.gridCells = this.gridWrapper.find('.grid-square');
         this.infoWrapper = gameWrapper.find('.info-wrapper');
+        this.disableCheckbox = this.infoWrapper.find('#disableLastCell');
         this.msg_error = 'You cannot select the last clicked cell.';
+        // toggle whether the last cell can be clicked again
+        this.disableCheckbox.on('change', (e) => {
+            this.disableLastCell = (e.currentTarget).checked;
+        });
+        // on click of a grid cell
         this.gridCells.on('click', (e) => {
             this.currentCell = $(e.currentTarget);
-            if (this.currentCell.hasClass('disabled')) {
+            if (this.disableLastCell && this.currentCell.hasClass('disabled')) {
                 this.messageController('danger', this.msg_error);
             }
             else {
@@ -82,7 +89,7 @@ class ColorMatchManager {
         let alertBox = this.infoWrapper.find('.alert');
         if (alertBox.length) {
             alertBox.removeClass('alert-danger alert-success').addClass(`alert-${alertType}`);
-            alertBox.html(message);
+            alertBox.html(message).fadeIn('slow');
         }
         else {
             this.infoWrapper.prepend(`<div class="alert alert-${alertType}" role="alert">
