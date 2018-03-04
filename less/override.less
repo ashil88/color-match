@@ -1,0 +1,33 @@
+.game-wrapper {
+  .grid-wrapper {
+    //border-collapse: collapse;
+    display: grid;
+    grid-gap: 5px 5px;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 80px);
+    margin-bottom: 50px;
+    .grid-square {
+      background-color: #f7f7f9;
+      color: #000000;
+      cursor: pointer;
+      font-weight: bold;
+      padding-top: 25px;
+      text-align: center;
+      transition: background-color 1s ease;
+      &:hover {
+        background-color: gray;
+      }
+      &.lime {
+        background-color: #83e522;
+      }
+      &.orange {
+        background-color: #ef7604;
+      }
+    }
+  }
+  .info-wrapper {
+    .alert {
+      display: none;
+    }
+  }
+}

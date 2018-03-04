@@ -1,0 +1,28 @@
+.game-wrapper .grid-wrapper {
+  display: grid;
+  grid-gap: 5px 5px;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(5, 80px);
+  margin-bottom: 50px;
+}
+.game-wrapper .grid-wrapper .grid-square {
+  background-color: #f7f7f9;
+  color: #000000;
+  cursor: pointer;
+  font-weight: bold;
+  padding-top: 25px;
+  text-align: center;
+  transition: background-color 1s ease;
+}
+.game-wrapper .grid-wrapper .grid-square:hover {
+  background-color: gray;
+}
+.game-wrapper .grid-wrapper .grid-square.lime {
+  background-color: #83e522;
+}
+.game-wrapper .grid-wrapper .grid-square.orange {
+  background-color: #ef7604;
+}
+.game-wrapper .info-wrapper .alert {
+  display: none;
+}
